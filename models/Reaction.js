@@ -1,24 +1,26 @@
-const { Schema, model, Types } = require('mongoose');
-const moment = require('moment');
+const { Schema, Types } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
+// reaction schema tied to thought
 const reactionSchema = new Schema({
+    // set custom id to avoid confusion with parent id
     reactionId: {
-        type: Types.ObjectId,
-        default: new Types.ObjectId()
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
     },
     reactionBody: {
         type: String,
         required: true,
-        maxLength: 280
+        maxlength: 280
     },
     username: {
         type: String,
-        required: true
+        required: true,
     },
     createdAt: {
         type: Date,
         default: Date.now,
-        get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
+        get: createdAtVal => dateFormat(createdAtVal)
     }
 }, {
     toJSON: {

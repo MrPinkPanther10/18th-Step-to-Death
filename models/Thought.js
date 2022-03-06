@@ -1,23 +1,24 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 const reactionSchema = require('./Reaction');
-const moment = require('moment');
 
+// thought schema
 const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
         required: true,
-        minLength: 1,
-        maxLength: 280
+        maxlength: 280
     },
     createdAt: {
         type: Date,
         default: Date.now,
-        get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
+        get: (createdAtVal) => dateFormat(createdAtVal)
     },
     username: {
         type: String,
         required: true
     },
+    // tying reactions to thought
     reactions: [reactionSchema]
 }, {
     toJSON: {
@@ -27,10 +28,13 @@ const thoughtSchema = new Schema({
     id: false
 });
 
+// get total count of friends
 thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
+// create the User model using the UserSchema
 const Thought = model('Thought', thoughtSchema);
 
-module.exports = Thought;
+// export the User model
+module.exports = { Thought };
