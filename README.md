@@ -23,13 +23,24 @@ Once installation part is done, follow instructions
 
 
 This is the USER demo video:
-https://drive.google.com/file/d/1Kj0-psVX9_pylfCLlJnXo7gVMHEQgxFN/view
+
+https://user-images.githubusercontent.com/90013822/156947553-cdfc6a55-73d1-4626-8fb8-acf90f43123f.mp4
+
+
 
 This is the THOUGHTS demo video:
-https://drive.google.com/file/d/1s351kn96Zn0ibUbbTuPDjWZV6_p2Y59j/view
+
+
+https://user-images.githubusercontent.com/90013822/156947569-347eff7d-2a3d-4668-aa58-ff7c45182ede.mp4
+
+
 
 This is the FRIENDS and REACTION demo video:
-https://drive.google.com/file/d/1PvTXU_VIG_tLL9JOG3g1k6-euOJY7jto/view
+
+
+https://user-images.githubusercontent.com/90013822/156947575-b445eb32-4584-4433-ac64-b99f188b64bb.mp4
+
+
 
 
 
